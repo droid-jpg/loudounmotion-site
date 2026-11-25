@@ -142,7 +142,7 @@ form .btn { justify-self: start; }
 .make-c { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
 .make-c li { display: grid; gap: 8px; }
 .make-c p { color: var(--muted); max-width: 32ch; }
-.band { background: #F5F5F2; padding: clamp(64px, 8vw, 112px) 0; margin-top: clamp(80px, 10vw, 136px); }
+.band { background: var(--band, #F5F5F2); padding: clamp(64px, 8vw, 112px) 0; margin-top: clamp(80px, 10vw, 136px); }
 .band .section { padding-top: 0; }
 @media (max-width: 860px) {
   .feed { grid-template-columns: repeat(3, minmax(220px, 1fr)); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; margin-left: calc(-1 * var(--gutter)); margin-right: calc(-1 * var(--gutter)); padding-left: var(--gutter); padding-right: var(--gutter); }
