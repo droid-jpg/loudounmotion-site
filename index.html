@@ -3,41 +3,752 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loudoun Motion | Short video ads for local businesses</title>
-<meta name="description" content="Loudoun Motion makes short video ads for local businesses in Sterling, Ashburn and across Loudoun County, VA.">
+<title>Loudoun Motion | Short video ads for Loudoun County businesses</title>
+<meta name="description" content="Loudoun Motion makes 15 and 30 second video ads for restaurants, gyms, detailers and shops in Sterling, Ashburn and across Loudoun County, Virginia. Produced with AI, finished to look shot on set.">
+<meta name="theme-color" content="#F4F1EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#18181B" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/loudoun-motion-avatar.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jetbrains-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://loudounmotion.com/">
+<meta property="og:title" content="Loudoun Motion">
+<meta property="og:description" content="Fifteen seconds that sell. Short video ads for Loudoun County businesses, produced with AI and finished to look shot on set.">
+<meta property="og:image" content="https://loudounmotion.com/assets/loudoun-motion-avatar.png">
 <style>
-  :root { --bg:#0f1115; --fg:#f4f1ea; --muted:#9a9a9f; --accent:#e8b04b; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  html, body { height:100%; }
-  body {
-    background:var(--bg); color:var(--fg);
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
-    display:flex; flex-direction:column; min-height:100vh;
-    padding:clamp(24px, 5vw, 56px);
+@font-face {
+  font-family: "Inter Tight"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("assets/fonts/inter-tight-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter Tight"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("assets/fonts/inter-tight-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "JetBrains Mono"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("assets/fonts/jetbrains-mono-500-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light dark;
+  /* Loudoun Motion Brand tokens */
+  --surface: #F4F1EA;
+  --surface-raised: #FFFFFF;
+  --ink: #18181B;
+  --ink-muted: #55555C;
+  --line: #D6D3CB;
+  --rec-red: #E5322D;
+  --rec-red-text: #CB1E19;
+  --night: #0A0A0B;
+  --on-night: #F4F1EA;
+  /* derived for this page */
+  --ink-hover: #34343A;
+  --on-night-muted: #A1A1AA;
+  --night-raised: #151518;
+  --night-control: #74747C;
+
+  --sans: "Inter Tight", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-18: 72px;
+  --space-24: 96px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --page: 1280px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --tc: 8.25rem;
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #18181B;
+    --surface-raised: #232327;
+    --ink: #F4F1EA;
+    --ink-muted: #A1A1AA;
+    --line: #3F3F46;
+    --rec-red-text: #FF6B66;
+    --ink-hover: #FFFFFF;
   }
-  header { font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:.85rem; }
-  header span { color:var(--accent); }
-  main { flex:1; display:flex; flex-direction:column; justify-content:center; max-width:720px; }
-  h1 { font-size:clamp(2.4rem, 7vw, 4.6rem); line-height:1.02; letter-spacing:-.02em; margin-bottom:24px; }
-  h1 em { font-style:normal; color:var(--accent); }
-  p { color:var(--muted); font-size:clamp(1.05rem, 2.2vw, 1.25rem); line-height:1.55; max-width:560px; }
-  .cta { display:inline-block; margin-top:36px; padding:14px 26px; border-radius:999px;
-         background:var(--accent); color:#16130c; font-weight:600; text-decoration:none; width:fit-content; }
-  .cta:hover { filter:brightness(1.08); }
-  footer { color:var(--muted); font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 24px; }
-  footer a { color:var(--muted); }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--space-6); -webkit-text-size-adjust: 100%; scrollbar-color: var(--ink-muted) var(--surface); }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  caret-color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--ink); color: var(--surface); }
+h1, h2, h3, p, ol, ul, figure, fieldset, legend { margin: 0; padding: 0; }
+ol, ul { list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 2px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mono { font-family: var(--mono); font-weight: 500; font-size: .875em; letter-spacing: 0; }
+.wrap { width: 100%; max-width: var(--page); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: 48px; padding: 0 var(--space-6);
+  border: 0; border-radius: var(--radius-sm);
+  background: var(--ink); color: var(--surface);
+  font: 600 1rem/1 var(--sans); letter-spacing: -.005em;
+  text-decoration: none; cursor: pointer;
+  transition: background-color .2s var(--ease-out), transform .2s var(--ease-out);
+}
+.btn:hover { background: var(--ink-hover); }
+.btn:active { transform: translateY(1px); }
+.btn--sm { min-height: 40px; padding: 0 var(--space-4); font-size: .9375rem; }
+.btn svg { width: 14px; height: 14px; flex: none; }
+.btn { white-space: nowrap; }
+
+/* ---------- header ---------- */
+.site-head { padding-top: var(--space-6); }
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); }
+.brand { display: block; flex: none; }
+.brand img { width: 186px; height: 34px; }
+.site-nav { display: flex; align-items: center; gap: var(--space-4); font-size: .9375rem; font-weight: 500; }
+.site-nav a:not(.btn) { text-decoration: none; padding: var(--space-1) 6px; }
+.site-nav a:not(.btn):hover { text-decoration: underline; }
+
+/* ---------- script grid ---------- */
+.slug {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2) var(--space-6);
+  margin-top: var(--space-12); padding: var(--space-4) 0;
+  border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line);
+  font-size: .9375rem;
+}
+.slug b { font-weight: 600; }
+.slug .mono { color: var(--ink-muted); }
+.cols, .beat {
+  display: grid;
+  grid-template-columns: var(--tc) minmax(0, 1fr) minmax(0, 1.65fr);
+  column-gap: var(--space-6);
+}
+.cols { padding: var(--space-4) 0 var(--space-2); font-size: .8125rem; font-weight: 500; color: var(--ink-muted); }
+.beat { padding: var(--space-6) 0; border-bottom: 1px solid var(--line); align-items: start; }
+.tc { font-family: var(--mono); font-weight: 500; font-size: .8125rem; line-height: 1.85; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.video { color: var(--ink-muted); max-width: 34ch; }
+
+/* hero */
+.hero .beat:first-child { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+h1 {
+  font-size: clamp(2.75rem, 1.2rem + 5.4vw, 5.5rem);
+  line-height: .98; font-weight: 700; letter-spacing: -.035em;
+  text-wrap: balance; max-width: 11ch;
+}
+.lede { font-size: clamp(1.125rem, 1rem + .4vw, 1.3125rem); line-height: 1.5; max-width: 38ch; text-wrap: pretty; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-6); }
+.actions .mono { font-size: .9375rem; }
+
+.readout {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  margin-top: var(--space-4); padding: 10px var(--space-4) 10px 12px;
+  background: var(--night); color: var(--on-night);
+  border-radius: var(--radius-sm);
+  font: 500 1rem/1.3 var(--mono); font-variant-numeric: tabular-nums;
+}
+.readout .light { width: 12px; height: 12px; }
+.readout .state { color: var(--on-night-muted); }
+.light {
+  width: 10px; height: 10px; border-radius: 50%; flex: none;
+  background: var(--night-control);
+  transition: background-color .5s var(--ease-out), box-shadow .5s var(--ease-out);
+}
+.is-rolling .light { background: var(--rec-red); animation: blink 1s steps(1, end) infinite; }
+@keyframes blink { 0%, 62% { opacity: 1; } 63%, 100% { opacity: .28; } }
+
+/* sections */
+.section { padding-top: var(--space-24); }
+.section-head {
+  display: grid; grid-template-columns: var(--tc) minmax(0, 1fr); column-gap: var(--space-6);
+  padding-bottom: var(--space-6); border-bottom: 2px solid var(--ink);
+}
+.section-head > * { grid-column: 2; }
+h2 { font-size: clamp(2rem, 1.4rem + 2vw, 2.5rem); line-height: 1.05; font-weight: 700; letter-spacing: -.025em; text-wrap: balance; max-width: 22ch; }
+.section-head p { margin-top: var(--space-4); color: var(--ink-muted); max-width: 60ch; text-wrap: pretty; }
+h3 { font-size: 1.5rem; line-height: 1.25; font-weight: 700; letter-spacing: -.015em; text-wrap: balance; }
+
+/* sample script + monitor */
+.sample-body { display: grid; grid-template-columns: minmax(0, 1fr) 272px; column-gap: var(--space-12); align-items: start; }
+.sample-body .beat { grid-template-columns: var(--tc) minmax(0, 1fr) minmax(0, 1.1fr); transition: background-color .35s var(--ease-out); position: relative; }
+.sample-body .beat { isolation: isolate; scroll-margin-bottom: var(--space-6); }
+.sample-body .beat::before {
+  content: ""; position: absolute; z-index: -1; inset: 0;
+  background: var(--surface-raised); opacity: 0; transition: opacity .3s var(--ease-out);
+}
+.sample-body .beat.is-live::before { opacity: 1; }
+.sample-body .beat.is-live .tc { color: var(--ink); }
+.sample-body .beat.is-live .video { color: var(--ink); }
+.cue { display: block; }
+.cue + .cue { margin-top: var(--space-2); }
+.cue b { font-weight: 600; }
+.super-note { display: block; margin-top: var(--space-2); font-size: .9375rem; color: var(--ink-muted); }
+.super-note q { font-weight: 600; color: var(--ink); quotes: "\201C" "\201D"; }
+.beat--out { border-bottom: 0; }
+
+.player { position: sticky; top: var(--space-6); padding-top: var(--space-6); }
+.monitor {
+  container-type: inline-size;
+  position: relative; aspect-ratio: 9 / 16; width: 100%;
+  background: var(--night); color: var(--on-night);
+  border-radius: var(--radius-md); overflow: hidden;
+  font-family: var(--mono); font-weight: 500;
+}
+.corner { position: absolute; width: 22px; height: 22px; border: 0 solid rgba(244, 241, 234, .42); }
+.corner--tl { top: 14px; left: 14px; border-top-width: 2px; border-left-width: 2px; }
+.corner--tr { top: 14px; right: 14px; border-top-width: 2px; border-right-width: 2px; }
+.corner--bl { bottom: 22px; left: 14px; border-bottom-width: 2px; border-left-width: 2px; }
+.corner--br { bottom: 22px; right: 14px; border-bottom-width: 2px; border-right-width: 2px; }
+.hud { position: absolute; top: 46px; left: 24px; right: 24px; display: flex; align-items: center; gap: var(--space-2); font-size: .75rem; }
+.hud .fmt { margin-left: auto; color: var(--on-night-muted); }
+@container (max-width: 230px) { .hud .fmt { display: none; } }
+@container (max-width: 170px) { .hud .state { display: none; } }
+.hud .state { color: var(--on-night-muted); }
+.shot { position: absolute; left: 24px; right: 24px; top: 41%; transform: translateY(-50%); text-align: center; }
+.shot-code { display: block; font-size: 1.75rem; letter-spacing: .04em; }
+.shot-desc { display: block; margin-top: var(--space-2); font-family: var(--sans); font-weight: 400; font-size: .875rem; line-height: 1.4; color: var(--on-night-muted); }
+.super {
+  position: absolute; left: 24px; right: 24px; bottom: 58px;
+  font-family: var(--sans); font-weight: 700; font-size: 1.25rem; line-height: 1.15; letter-spacing: -.01em;
+  text-wrap: balance; opacity: 0; transform: translateY(6px);
+  transition: opacity .3s var(--ease-out), transform .3s var(--ease-out);
+}
+.super.is-on { opacity: 1; transform: none; }
+.bar { position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: #1d1d21; }
+.bar span { display: block; height: 100%; width: 100%; background: var(--rec-red); transform-origin: left; transform: scaleX(0); }
+.player-controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); margin-top: var(--space-4); }
+.now { display: none; }
+.player-note { margin-top: var(--space-4); font-size: .875rem; line-height: 1.45; color: var(--ink-muted); }
+
+/* how it works + questions */
+.rows .beat { grid-template-columns: var(--tc) minmax(0, 1fr) minmax(0, 1.65fr); padding: var(--space-8) 0; }
+.step { font-size: .9375rem; font-weight: 600; line-height: 1.9; color: var(--ink-muted); }
+.rows p { max-width: 58ch; text-wrap: pretty; }
+.rows h3 { max-width: 20ch; }
+
+/* ---------- end card ---------- */
+.end {
+  position: relative; margin-top: var(--space-24);
+  background: var(--night); color: var(--on-night);
+  padding: var(--space-12) 0 var(--space-8);
+}
+.end :focus-visible { outline-color: var(--on-night); }
+.end ::selection { background: var(--on-night); color: var(--night); }
+.end .corner { width: 40px; height: 40px; border-color: rgba(244, 241, 234, .22); }
+.end .corner--tl { top: var(--space-6); left: var(--space-6); }
+.end .corner--tr { top: var(--space-6); right: var(--space-6); }
+.end .corner--bl { bottom: var(--space-6); left: var(--space-6); }
+.end .corner--br { bottom: var(--space-6); right: var(--space-6); }
+.end-top { display: flex; justify-content: space-between; align-items: center; font: 500 .875rem/1 var(--mono); color: var(--on-night-muted); }
+.end-top .rec { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--on-night); }
+.end-top .light { background: var(--rec-red); }
+.end-inner { max-width: 600px; margin: 0 auto; padding: var(--space-18) 0 var(--space-12); }
+.end-mark { width: min(320px, 78%); margin: 0 auto; }
+.end h2 { margin: var(--space-12) auto 0; text-align: center; max-width: 16ch; }
+.end-intro { margin: var(--space-4) auto 0; text-align: center; color: var(--on-night-muted); max-width: 44ch; }
+
+form { margin-top: var(--space-12); display: grid; gap: var(--space-6); }
+.field { display: grid; gap: var(--space-2); border: 0; min-width: 0; }
+label, legend { font-size: .9375rem; font-weight: 600; }
+.opt { font-weight: 400; color: var(--on-night-muted); }
+input[type="text"], textarea {
+  width: 100%; min-height: 52px; padding: 14px var(--space-4);
+  background: var(--night-raised); color: var(--on-night);
+  border: 1px solid var(--night-control); border-radius: var(--radius-sm);
+  font: 400 1rem/1.45 var(--sans); caret-color: var(--on-night);
+  transition: border-color .2s var(--ease-out);
+}
+textarea { resize: vertical; min-height: 104px; }
+input::placeholder, textarea::placeholder { color: var(--on-night-muted); opacity: 1; }
+input[type="text"]:hover, textarea:hover { border-color: var(--on-night-muted); }
+input[type="text"]:focus-visible, textarea:focus-visible { outline: 2px solid var(--on-night); outline-offset: 1px; border-color: var(--on-night); }
+input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: var(--on-night); box-shadow: inset 0 0 0 1px var(--on-night); }
+.error {
+  display: flex; gap: var(--space-2); align-items: flex-start;
+  color: var(--on-night); font-size: .9375rem; line-height: 1.4;
+}
+.error::before {
+  content: ""; flex: none; width: 16px; height: 16px; margin-top: 2px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='none' stroke='%23F4F1EA' stroke-width='1.5'/%3E%3Cpath d='M8 4.25v4.5' stroke='%23F4F1EA' stroke-width='1.6' stroke-linecap='square'/%3E%3Ccircle cx='8' cy='11.4' r='1' fill='%23F4F1EA'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.error:empty { display: none; }
+legend { margin-bottom: var(--space-2); }
+.seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); }
+.seg label { position: relative; font-weight: 500; }
+.seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.seg span {
+  display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 var(--space-2);
+  border: 1px solid var(--night-control); border-radius: var(--radius-sm); text-align: center; line-height: 1.2;
+  transition: background-color .2s var(--ease-out), color .2s var(--ease-out), border-color .2s;
+}
+.seg label:hover span { border-color: var(--on-night-muted); }
+.seg input:checked + span { background: var(--on-night); color: var(--night); border-color: var(--on-night); font-weight: 600; }
+.seg input:focus-visible + span { outline: 2px solid var(--on-night); outline-offset: 2px; }
+.btn--night { background: var(--on-night); color: var(--night); width: 100%; min-height: 54px; font-size: 1.0625rem; }
+.btn--night:hover { background: #FFFFFF; }
+.form-note { font-size: .9375rem; color: var(--on-night-muted); text-align: center; }
+.form-note a { color: var(--on-night); }
+.status { padding-top: var(--space-6); border-top: 1px solid rgba(244, 241, 234, .22); }
+.status p { font-size: .9375rem; }
+.status pre {
+  margin: var(--space-4) 0 var(--space-6); padding: 0;
+  font: 400 .9375rem/1.55 var(--sans); white-space: pre-wrap; overflow-wrap: anywhere; color: var(--on-night-muted);
+}
+.btn--ghost { background: transparent; color: var(--on-night); border: 1px solid var(--night-control); min-height: 44px; }
+.btn--ghost:hover { background: var(--night); border-color: var(--on-night); }
+
+.end-url { margin-top: var(--space-12); text-align: center; font: 500 1rem/1 var(--mono); }
+.end-url a { text-decoration: none; }
+.end-url a:hover { text-decoration: underline; }
+.colophon {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2) var(--space-6);
+  margin-top: var(--space-12); font-size: .875rem; color: var(--on-night-muted);
+}
+
+/* ---------- responsive ---------- */
+@media (prefers-color-scheme: dark) { .end { box-shadow: 0 -1px 0 var(--line); } }
+@media (max-width: 1100px) {
+  .sample-body { grid-template-columns: minmax(0, 1fr); }
+  .player {
+    position: relative; order: -1; z-index: 2;
+    display: grid; grid-template-columns: 150px minmax(0, 1fr); column-gap: var(--space-6); align-items: center;
+    padding: var(--space-4) 0; background: var(--surface); border-bottom: 1px solid var(--line);
+  }
+  .sample-body.is-playing .player { position: sticky; top: 0; }
+  .monitor .shot-desc { display: none; }
+  .now { display: block; font-size: 1.0625rem; line-height: 1.4; }
+  .now b { font-weight: 700; }
+  .player-note { margin-top: var(--space-2); }
+}
+@media (max-width: 860px) {
+  :root { --tc: 1fr; }
+  .site-nav a:not(.btn) { display: none; }
+  .cols { display: none; }
+  .beat, .sample-body .beat, .rows .beat { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-2); }
+  .hero .beat:first-child { padding-top: var(--space-6); padding-bottom: var(--space-6); }
+  .beat .tc { line-height: 1.4; }
+  .hero .readout { margin-bottom: var(--space-4); }
+  .video { max-width: 46ch; }
+  .section-head { grid-template-columns: minmax(0, 1fr); }
+  .section-head > * { grid-column: 1; }
+  .rows .beat { padding: var(--space-6) 0; }
+  .step { line-height: 1.4; }
+}
+@media (max-width: 560px) {
+  .brand img { width: 154px; height: 28px; }
+  .slug { margin-top: var(--space-8); }
+  .player { grid-template-columns: 112px minmax(0, 1fr); column-gap: var(--space-4); padding: var(--space-2) 0; }
+  .now { font-size: 1rem; }
+  .player-note { font-size: .8125rem; }
+  .monitor .hud { top: 30px; left: 12px; right: 12px; font-size: .6875rem; gap: 6px; }
+  .monitor .corner { width: 14px; height: 14px; }
+  .monitor .corner--tl, .monitor .corner--tr { top: 9px; }
+  .monitor .corner--tl, .monitor .corner--bl { left: 9px; }
+  .monitor .corner--tr, .monitor .corner--br { right: 9px; }
+  .monitor .corner--bl, .monitor .corner--br { bottom: 14px; }
+  .shot { left: 12px; right: 12px; }
+  .shot-code { font-size: 1.125rem; }
+  .shot-desc { display: none; }
+  .super { left: 10px; right: 10px; bottom: 20px; font-size: .75rem; }
+  .bar { height: 4px; }
+  .player-controls { margin-top: var(--space-2); }
+  .player-controls .btn { min-height: 44px; }
+  .seg span { padding: 0 var(--space-1); font-size: .9375rem; }
+  .end .corner { width: 24px; height: 24px; }
+  .end .corner--tl, .end .corner--tr { top: var(--space-4); }
+  .end .corner--tl, .end .corner--bl { left: var(--space-4); }
+  .end .corner--tr, .end .corner--br { right: var(--space-4); }
+  .end .corner--bl, .end .corner--br { bottom: var(--space-4); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .is-rolling .light { animation: none; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
 </style>
 </head>
 <body>
-  <header>Loudoun <span>Motion</span></header>
-  <main>
-    <h1>Short video ads that make <em>local</em> businesses stand out.</h1>
-    <p>Scroll-stopping 15–30 second ads for restaurants, gyms, detailers and shops in Sterling, Ashburn and across Loudoun County. Full site and sample work coming soon.</p>
-    <a class="cta" href="mailto:hello@loudounmotion.com">hello@loudounmotion.com</a>
-  </main>
-  <footer>
-    <span>Sterling, Virginia</span>
-    <span>© 2026 Loudoun Motion</span>
-  </footer>
+
+<header class="site-head" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Loudoun Motion, back to top">
+      <picture>
+        <source srcset="assets/loudoun-motion-lockup-reverse.svg" media="(prefers-color-scheme: dark)">
+        <img src="assets/loudoun-motion-lockup.svg" alt="Loudoun Motion" width="186" height="34">
+      </picture>
+    </a>
+    <nav class="site-nav" aria-label="Page">
+      <a href="#sample">Sample script</a>
+      <a href="#how">How it works</a>
+      <a href="#questions">Questions</a>
+      <a class="btn btn--sm" href="#quote" data-to-form>Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="slug">
+      <p><b>Loudoun Motion</b> · Spot: “Fifteen seconds”</p>
+      <p class="mono">0:15 · 9:16 · 16:9</p>
+    </div>
+    <div class="cols" aria-hidden="true"><span>Timecode</span><span>Video</span><span>Audio</span></div>
+    <ol class="script">
+      <li class="beat">
+        <span class="tc"><span class="sr">At </span>00:00:00:00</span>
+        <div class="video">
+          <p><span class="sr">Video: </span>Black. A record light blinks on.</p>
+          <p class="readout" id="hero-readout" aria-hidden="true"><span class="light"></span><span class="state" data-state>STBY</span><span data-tc>00:00:00:00</span></p>
+        </div>
+        <div class="audio"><h1 id="hero-title">Fifteen seconds that sell.</h1></div>
+      </li>
+      <li class="beat">
+        <span class="tc"><span class="sr">At </span>00:00:03:00</span>
+        <p class="video"><span class="sr">Video: </span>Your best seller, up close. Your offer, clear. Framed like a commercial.</p>
+        <p class="audio lede"><span class="sr">Audio: </span>Short video ads for restaurants, gyms, detailers and shops across Loudoun County. Scripted with you, produced with AI and finished to look shot on set.</p>
+      </li>
+      <li class="beat">
+        <span class="tc"><span class="sr">At </span>00:00:12:00</span>
+        <p class="video"><span class="sr">Video: </span>End card. Your name, your offer.</p>
+        <div class="audio actions">
+          <a class="btn" href="#quote" data-to-form>Get a quote</a>
+          <a class="mono" href="mailto:hello@loudounmotion.com">hello@loudounmotion.com</a>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section wrap" id="sample" aria-labelledby="sample-title">
+    <div class="section-head">
+      <h2 id="sample-title">A sample spot, beat by beat</h2>
+      <p>Hearth &amp; Hollow is a made-up Sterling café, written for this page. This is the kind of script you read and approve before anything is produced: 15 seconds, vertical, for Instagram and TikTok.</p>
+    </div>
+    <div class="sample-body">
+      <ol class="script" id="sample-script">
+        <li class="beat" data-frame="0">
+          <span class="tc">00:00:00:00</span>
+          <p class="video"><span class="sr">Video: </span>Extreme close-up. Espresso pours into a glass of cold milk and blooms.</p>
+          <p class="audio"><span class="sr">Audio: </span><span class="cue"><b>SFX</b> The pour, ice settling.</span><span class="cue"><b>Music</b> Warm guitar loop fades in.</span></p>
+        </li>
+        <li class="beat" data-frame="60">
+          <span class="tc">00:00:02:12</span>
+          <p class="video"><span class="sr">Video: </span>Pull back. A barista slides the glass across a walnut counter in early window light.</p>
+          <p class="audio"><span class="sr">Audio: </span><span class="cue"><b>VO</b> Sterling’s first cup is ready at six.</span></p>
+        </li>
+        <li class="beat" data-frame="132">
+          <span class="tc">00:00:05:12</span>
+          <p class="video"><span class="sr">Video: </span>Three quick cuts: a croissant torn open, steam off a pour-over, a regular waving at the door.<span class="super-note">On screen: <q>Open daily at 6 AM</q></span></p>
+          <p class="audio"><span class="sr">Audio: </span><span class="cue"><b>VO</b> Baked here. Made to order.</span></p>
+        </li>
+        <li class="beat" data-frame="216">
+          <span class="tc">00:00:09:00</span>
+          <p class="video"><span class="sr">Video: </span>Wide. The shopfront on a bright morning, sign in frame, someone stepping inside.<span class="super-note">On screen: <q>Hearth &amp; Hollow · Sterling, VA</q></span></p>
+          <p class="audio"><span class="sr">Audio: </span><span class="cue"><b>VO</b> Hearth and Hollow, in Sterling.</span></p>
+        </li>
+        <li class="beat" data-frame="288">
+          <span class="tc">00:00:12:00</span>
+          <p class="video"><span class="sr">Video: </span>End card. Logo and offer on a dark ground.<span class="super-note">On screen: <q>Show this ad. First pastry’s on us.</q></span></p>
+          <p class="audio"><span class="sr">Audio: </span><span class="cue"><b>VO</b> Show this ad and your first pastry is on us.</span><span class="cue"><b>Music</b> Button out.</span></p>
+        </li>
+        <li class="beat beat--out">
+          <span class="tc">00:00:15:00</span>
+          <p class="video">Out.</p>
+          <span></span>
+        </li>
+      </ol>
+
+      <div class="player">
+        <figure class="monitor" aria-label="Preview of the sample spot, text only">
+          <span class="corner corner--tl"></span><span class="corner corner--tr"></span><span class="corner corner--bl"></span><span class="corner corner--br"></span>
+          <div class="hud"><span class="light"></span><span class="state" data-state>STBY</span><span data-tc>00:00:00:00</span><span class="fmt">9:16</span></div>
+          <p class="shot"><span class="shot-code" data-shot>ECU</span><span class="shot-desc" data-desc>Espresso into cold milk</span></p>
+          <p class="super" data-super></p>
+          <div class="bar"><span data-bar></span></div>
+        </figure>
+        <div class="player-side">
+          <p class="now" aria-hidden="true"><b data-now-shot>ECU</b> · <span data-now-desc>Espresso into cold milk</span></p>
+          <div class="player-controls">
+            <button class="btn" type="button" id="play" aria-pressed="false">
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>
+              <span>Play the spot</span>
+            </button>
+          </div>
+          <p class="player-note">A text-only read of the script that runs in real time, 15 seconds. The finished ad replaces each line with a shot.</p>
+          <p class="sr" aria-live="polite" id="player-status"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="how" aria-labelledby="how-title">
+    <div class="section-head">
+      <h2 id="how-title">From first email to finished ad</h2>
+    </div>
+    <ol class="rows">
+      <li class="beat">
+        <span class="step">Step 1</span>
+        <h3>You tell us what to sell.</h3>
+        <p>A new menu item, a sale, an opening, a seasonal service. Say where the ad will run and we reply with an idea and a quote.</p>
+      </li>
+      <li class="beat">
+        <span class="step">Step 2</span>
+        <h3>You approve the script.</h3>
+        <p>We write it shot by shot, like the sample above. Nothing is produced until you sign off.</p>
+      </li>
+      <li class="beat">
+        <span class="step">Step 3</span>
+        <h3>We produce and deliver.</h3>
+        <p>The ad is produced with AI and finished until every frame looks shot on set. You get the finished files in the formats you need, ready to post or boost.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section wrap" id="questions" aria-labelledby="questions-title">
+    <div class="section-head">
+      <h2 id="questions-title">Straight answers</h2>
+    </div>
+    <div class="rows">
+      <div class="beat">
+        <span></span>
+        <h3>Is it really made with AI?</h3>
+        <p>Yes. Every Loudoun Motion ad is produced with AI and finished until every frame looks shot on set. We say so plainly, and you see the finished ad before it runs anywhere.</p>
+      </div>
+      <div class="beat">
+        <span></span>
+        <h3>What does an ad cost?</h3>
+        <p>Every ad is quoted. Tell us what you want to promote and how long the ad should be, and you get a price before any work starts.</p>
+      </div>
+      <div class="beat">
+        <span></span>
+        <h3>Where can I run it?</h3>
+        <p>Instagram, Facebook, TikTok, YouTube, your Google Business profile and your own website. You get the files to post yourself or to boost as paid ads.</p>
+      </div>
+      <div class="beat">
+        <span></span>
+        <h3>Who will I be working with?</h3>
+        <p>Loudoun Motion is a one-person business based in Sterling. Whoever answers your email also writes your script and delivers your ad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="end" id="quote" aria-labelledby="quote-title">
+    <span class="corner corner--tl" aria-hidden="true"></span><span class="corner corner--tr" aria-hidden="true"></span><span class="corner corner--bl" aria-hidden="true"></span><span class="corner corner--br" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="end-top" aria-hidden="true">
+        <span class="rec"><span class="light"></span>REC</span>
+        <span>00:00:15:00</span>
+      </div>
+      <div class="end-inner">
+        <img class="end-mark" src="assets/loudoun-motion-lockup-reverse.svg" alt="Loudoun Motion" width="320" height="59">
+        <h2 id="quote-title">Let’s write your fifteen seconds.</h2>
+        <p class="end-intro">Tell us a little about the ad. We reply with an idea and a quote.</p>
+
+        <form id="quote-form" action="mailto:hello@loudounmotion.com" method="post" enctype="text/plain" novalidate>
+          <div class="field">
+            <label for="biz">Business name</label>
+            <input type="text" id="biz" name="business" autocomplete="organization" required aria-describedby="biz-error">
+            <p class="error" id="biz-error"></p>
+          </div>
+          <div class="field">
+            <label for="sell">What should the ad sell?</label>
+            <textarea id="sell" name="sell" rows="3" placeholder="A new menu, a grand opening, a seasonal special" required aria-describedby="sell-error"></textarea>
+            <p class="error" id="sell-error"></p>
+          </div>
+          <fieldset class="field">
+            <legend>Length</legend>
+            <div class="seg">
+              <label><input type="radio" name="spot_length" value="15 seconds" checked><span>15 seconds</span></label>
+              <label><input type="radio" name="spot_length" value="30 seconds"><span>30 seconds</span></label>
+              <label><input type="radio" name="spot_length" value="Not sure yet"><span>Not sure yet</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="where">Where will it run? <span class="opt">Optional</span></label>
+            <input type="text" id="where" name="where" placeholder="Instagram, TikTok, YouTube">
+          </div>
+          <button class="btn btn--night" type="submit">Draft my email</button>
+          <p class="form-note">Opens your email app with this filled in. Or write to <a class="mono" href="mailto:hello@loudounmotion.com">hello@loudounmotion.com</a></p>
+          <div class="status" id="form-status" role="status" hidden>
+            <p>Your email app should open with this message. If it didn’t, copy it and send it to <a class="mono" href="mailto:hello@loudounmotion.com">hello@loudounmotion.com</a>.</p>
+            <pre id="draft"></pre>
+            <button class="btn btn--ghost" type="button" id="copy">Copy message</button>
+          </div>
+        </form>
+      </div>
+      <p class="end-url"><a href="https://loudounmotion.com">loudounmotion.com</a></p>
+      <footer class="colophon">
+        <span>Sterling, Virginia</span>
+        <span>© 2026 Loudoun Motion</span>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<script>
+(() => {
+  const FPS = 24, SPOT = 15 * FPS;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tc = f => {
+    const s = Math.floor(f / FPS), fr = f % FPS;
+    return '00:00:' + String(s).padStart(2, '0') + ':' + String(fr).padStart(2, '0');
+  };
+
+  /* Hero: the record light turns on once, then the readout rolls 0 to 15 seconds. */
+  const hero = document.getElementById('hero-readout');
+  const heroTc = hero.querySelector('[data-tc]');
+  const heroState = hero.querySelector('[data-state]');
+  if (reduce) {
+    hero.classList.add('is-rolling'); heroState.textContent = 'REC'; heroTc.textContent = tc(SPOT);
+  } else {
+    setTimeout(() => {
+      hero.classList.add('is-rolling'); heroState.textContent = 'REC';
+      const t0 = performance.now();
+      const tick = now => {
+        heroTc.textContent = tc(Math.floor((now - t0) / 1000 * FPS) % (SPOT + 1));
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, 700);
+  }
+
+  /* Sample spot player */
+  const beats = [...document.querySelectorAll('#sample-script .beat[data-frame]')];
+  const shots = [
+    { code: 'ECU', desc: 'Espresso into cold milk', sup: '' },
+    { code: 'MS', desc: 'Glass across the counter', sup: '' },
+    { code: 'CU', desc: 'Croissant, pour-over, the door', sup: 'Open daily at 6 AM' },
+    { code: 'WS', desc: 'The shopfront', sup: 'Hearth & Hollow · Sterling, VA' },
+    { code: 'END', desc: 'Logo and offer', sup: 'Show this ad. First pastry’s on us.' }
+  ];
+  const starts = beats.map(b => +b.dataset.frame);
+  const mon = document.querySelector('.monitor');
+  const $ = s => mon.querySelector(s);
+  const body = document.querySelector('.sample-body');
+  const nShot = document.querySelector('[data-now-shot]'), nDesc = document.querySelector('[data-now-desc]');
+  const mTc = $('[data-tc]'), mState = $('[data-state]'), mShot = $('[data-shot]'), mDesc = $('[data-desc]'), mSup = $('[data-super]'), mBar = $('[data-bar]');
+  const playBtn = document.getElementById('play'), playLabel = playBtn.querySelector('span');
+  const status = document.getElementById('player-status');
+  const icons = { play: '<path d="M3 1.5v11l9-5.5z" fill="currentColor"/>', pause: '<path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor"/>', replay: '<path d="M7 2a5 5 0 1 1-4.6 3h2.2A3 3 0 1 0 7 4v2.2L3.6 3.1 7 0z" fill="currentColor"/>' };
+  let frame = 0, current = -1, playing = false, last = 0, raf = 0;
+
+  const setIcon = k => { playBtn.querySelector('svg').innerHTML = icons[k]; };
+  const show = f => {
+    frame = Math.min(f, SPOT);
+    mTc.textContent = tc(Math.floor(frame));
+    mBar.style.transform = 'scaleX(' + (frame / SPOT) + ')';
+    let i = 0;
+    for (let k = 0; k < starts.length; k++) if (frame >= starts[k]) i = k;
+    if (frame >= SPOT) i = -1;
+    if (i !== current) {
+      beats.forEach((b, k) => b.classList.toggle('is-live', k === i && playing));
+      if (i >= 0) {
+        const s = shots[i];
+        mShot.textContent = s.code; mDesc.textContent = s.desc;
+        mSup.textContent = s.sup; mSup.classList.toggle('is-on', !!s.sup);
+        nShot.textContent = s.code; nDesc.textContent = s.desc;
+        if (playing) {
+          const r = beats[i].getBoundingClientRect();
+          if (r.bottom > innerHeight) beats[i].scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+        }
+        if (playing) status.textContent = 'Beat ' + (i + 1) + ' of 5: ' + s.desc + (s.sup ? '. On screen: ' + s.sup : '');
+      }
+      current = i;
+    }
+  };
+  const stop = done => {
+    playing = false; cancelAnimationFrame(raf); body.classList.remove('is-playing');
+    mon.classList.remove('is-rolling'); mState.textContent = done ? 'END' : 'STBY';
+    playBtn.setAttribute('aria-pressed', 'false');
+    playLabel.textContent = done ? 'Play it again' : 'Resume';
+    setIcon(done ? 'replay' : 'play');
+    beats.forEach(b => b.classList.remove('is-live'));
+    if (done) status.textContent = 'End of the spot. Fifteen seconds.';
+  };
+  const loop = now => {
+    if (!playing) return;
+    show(frame + (now - last) / 1000 * FPS); last = now;
+    if (frame >= SPOT) { stop(true); return; }
+    raf = requestAnimationFrame(loop);
+  };
+  playBtn.addEventListener('click', () => {
+    if (playing) { stop(false); return; }
+    if (frame >= SPOT) { frame = 0; current = -1; }
+    playing = true; current = -1; mon.classList.add('is-rolling'); body.classList.add('is-playing'); mState.textContent = 'REC';
+    playBtn.setAttribute('aria-pressed', 'true'); playLabel.textContent = 'Pause'; setIcon('pause');
+    show(frame); last = performance.now(); raf = requestAnimationFrame(loop);
+  });
+  show(0);
+
+  /* Jump to the form and put the cursor in the first field. */
+  document.querySelectorAll('[data-to-form]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('quote').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    history.replaceState(null, '', '#quote');
+    setTimeout(() => document.getElementById('biz').focus({ preventScroll: true }), reduce ? 0 : 600);
+  }));
+
+  /* Quote form: compose the email in the visitor's own mail app. */
+  const form = document.getElementById('quote-form');
+  const draftBox = document.getElementById('form-status'), draft = document.getElementById('draft');
+  const fields = [
+    { el: form.business, err: document.getElementById('biz-error'), msg: 'Add your business name so we know who we are writing for.' },
+    { el: form.sell, err: document.getElementById('sell-error'), msg: 'Say what the ad should sell, even roughly. One line is plenty.' }
+  ];
+  fields.forEach(f => f.el.addEventListener('input', () => {
+    if (f.el.value.trim()) { f.el.removeAttribute('aria-invalid'); f.err.textContent = ''; }
+  }));
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let firstBad = null;
+    fields.forEach(f => {
+      const ok = !!f.el.value.trim();
+      if (ok) f.el.removeAttribute('aria-invalid'); else f.el.setAttribute('aria-invalid', 'true');
+      f.err.textContent = ok ? '' : f.msg;
+      if (!ok && !firstBad) firstBad = f.el;
+    });
+    if (firstBad) { firstBad.focus(); return; }
+    const biz = form.business.value.trim();
+    const where = form.where.value.trim();
+    const body = [
+      'Hi Loudoun Motion,', '',
+      'Business: ' + biz,
+      'What the ad should sell: ' + form.sell.value.trim(),
+      'Length: ' + form.elements.spot_length.value,
+      where ? 'Where it will run: ' + where : null, '',
+      'Thanks,'
+    ].filter(l => l !== null).join('\n');
+    draft.textContent = 'To: hello@loudounmotion.com\nSubject: Quote request: ' + biz + '\n\n' + body;
+    draftBox.hidden = false;
+    location.href = 'mailto:hello@loudounmotion.com?subject=' + encodeURIComponent('Quote request: ' + biz) + '&body=' + encodeURIComponent(body);
+  });
+  document.getElementById('copy').addEventListener('click', async e => {
+    const btn = e.currentTarget;
+    try { await navigator.clipboard.writeText(draft.textContent); btn.textContent = 'Copied'; }
+    catch { const r = document.createRange(); r.selectNodeContents(draft); getSelection().removeAllRanges(); getSelection().addRange(r); btn.textContent = 'Selected. Press Ctrl+C or ⌘C'; }
+    setTimeout(() => { btn.textContent = 'Copy message'; }, 2400);
+  });
+})();
+</script>
 </body>
 </html>
